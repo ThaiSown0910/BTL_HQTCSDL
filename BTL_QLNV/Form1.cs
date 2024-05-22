@@ -97,5 +97,31 @@ namespace BTL_QLNV
         {
 
         }
+
+        private void bt_xoa1_Click(object sender, EventArgs e)
+        {
+            // Check if a valid employee ID is selected
+            if (string.IsNullOrEmpty(tb_manv.Text))
+            {
+                MessageBox.Show("Vui lòng chọn mã nhân viên để xóa.");
+                return;
+            }
+
+            // Ask for confirmation before deleting
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "DELETE FROM ThongTinNhanVien WHERE MaNV = @MaNV";
+                command.Parameters.AddWithValue("@MaNV", tb_manv.Text);
+
+                // Execute the deletion command
+                command.ExecuteNonQuery();
+                MessageBox.Show("Nhân viên đã được xóa thành công.");
+
+                // Reload data after deletion
+                loaddata1();
+            }
+            }
     }
 }
