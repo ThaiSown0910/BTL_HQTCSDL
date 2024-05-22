@@ -31,17 +31,29 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgv1 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_gioitinh = new System.Windows.Forms.ComboBox();
+            this.dtime_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.tb_mapb1 = new System.Windows.Forms.TextBox();
+            this.tb_tennv = new System.Windows.Forms.TextBox();
+            this.tb_tienluong = new System.Windows.Forms.TextBox();
+            this.tb_chucvu = new System.Windows.Forms.TextBox();
             this.tb_manv = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgv2 = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.tb_diachi = new System.Windows.Forms.TextBox();
+            this.tb_tenpb = new System.Windows.Forms.TextBox();
+            this.tb_mapb2 = new System.Windows.Forms.TextBox();
             this.bt_sua1 = new System.Windows.Forms.Button();
             this.bt_xoa1 = new System.Windows.Forms.Button();
             this.bt_khoitao1 = new System.Windows.Forms.Button();
@@ -50,18 +62,6 @@
             this.bt_sua2 = new System.Windows.Forms.Button();
             this.bt_xoa2 = new System.Windows.Forms.Button();
             this.bt_khoitao2 = new System.Windows.Forms.Button();
-            this.tb_tennv = new System.Windows.Forms.TextBox();
-            this.tb_chucvu = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.tb_mapb2 = new System.Windows.Forms.TextBox();
-            this.tb_tenpb = new System.Windows.Forms.TextBox();
-            this.tb_diachi = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.tb_tienluong = new System.Windows.Forms.TextBox();
-            this.dtime_ngaysinh = new System.Windows.Forms.DateTimePicker();
-            this.cb_gioitinh = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -114,12 +114,52 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bảng Điều Khiển";
             // 
+            // cb_gioitinh
+            // 
+            this.cb_gioitinh.FormattingEnabled = true;
+            this.cb_gioitinh.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cb_gioitinh.Location = new System.Drawing.Point(124, 200);
+            this.cb_gioitinh.Name = "cb_gioitinh";
+            this.cb_gioitinh.Size = new System.Drawing.Size(216, 24);
+            this.cb_gioitinh.TabIndex = 3;
+            this.cb_gioitinh.SelectedIndexChanged += new System.EventHandler(this.cb_gioitinh_SelectedIndexChanged);
+            // 
+            // dtime_ngaysinh
+            // 
+            this.dtime_ngaysinh.Location = new System.Drawing.Point(461, 44);
+            this.dtime_ngaysinh.Name = "dtime_ngaysinh";
+            this.dtime_ngaysinh.Size = new System.Drawing.Size(252, 22);
+            this.dtime_ngaysinh.TabIndex = 2;
+            // 
             // tb_mapb1
             // 
             this.tb_mapb1.Location = new System.Drawing.Point(124, 275);
             this.tb_mapb1.Name = "tb_mapb1";
             this.tb_mapb1.Size = new System.Drawing.Size(216, 22);
             this.tb_mapb1.TabIndex = 1;
+            // 
+            // tb_tennv
+            // 
+            this.tb_tennv.Location = new System.Drawing.Point(124, 125);
+            this.tb_tennv.Name = "tb_tennv";
+            this.tb_tennv.Size = new System.Drawing.Size(216, 22);
+            this.tb_tennv.TabIndex = 1;
+            // 
+            // tb_tienluong
+            // 
+            this.tb_tienluong.Location = new System.Drawing.Point(461, 203);
+            this.tb_tienluong.Name = "tb_tienluong";
+            this.tb_tienluong.Size = new System.Drawing.Size(252, 22);
+            this.tb_tienluong.TabIndex = 1;
+            // 
+            // tb_chucvu
+            // 
+            this.tb_chucvu.Location = new System.Drawing.Point(461, 125);
+            this.tb_chucvu.Name = "tb_chucvu";
+            this.tb_chucvu.Size = new System.Drawing.Size(252, 22);
+            this.tb_chucvu.TabIndex = 1;
             // 
             // tb_manv
             // 
@@ -154,6 +194,15 @@
             this.label4.Size = new System.Drawing.Size(95, 16);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã Phòng Ban";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(359, 208);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 16);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Tiền Lương";
             // 
             // label6
             // 
@@ -218,6 +267,54 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Bảng Điều Khiển";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 203);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 16);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Địa Chỉ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 125);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 16);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Tên Phòng Ban";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 44);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 16);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Mã Phòng Ban";
+            // 
+            // tb_diachi
+            // 
+            this.tb_diachi.Location = new System.Drawing.Point(152, 197);
+            this.tb_diachi.Name = "tb_diachi";
+            this.tb_diachi.Size = new System.Drawing.Size(318, 22);
+            this.tb_diachi.TabIndex = 1;
+            // 
+            // tb_tenpb
+            // 
+            this.tb_tenpb.Location = new System.Drawing.Point(152, 119);
+            this.tb_tenpb.Name = "tb_tenpb";
+            this.tb_tenpb.Size = new System.Drawing.Size(318, 22);
+            this.tb_tenpb.TabIndex = 1;
+            // 
+            // tb_mapb2
+            // 
+            this.tb_mapb2.Location = new System.Drawing.Point(152, 41);
+            this.tb_mapb2.Name = "tb_mapb2";
+            this.tb_mapb2.Size = new System.Drawing.Size(318, 22);
+            this.tb_mapb2.TabIndex = 1;
+            // 
             // bt_sua1
             // 
             this.bt_sua1.Location = new System.Drawing.Point(757, 514);
@@ -253,6 +350,7 @@
             this.bt_them1.TabIndex = 4;
             this.bt_them1.Text = "Thêm";
             this.bt_them1.UseVisualStyleBackColor = true;
+            this.bt_them1.Click += new System.EventHandler(this.bt_them1_Click);
             // 
             // bt_them2
             // 
@@ -289,99 +387,6 @@
             this.bt_khoitao2.TabIndex = 4;
             this.bt_khoitao2.Text = "Khởi Tạo";
             this.bt_khoitao2.UseVisualStyleBackColor = true;
-            // 
-            // tb_tennv
-            // 
-            this.tb_tennv.Location = new System.Drawing.Point(124, 125);
-            this.tb_tennv.Name = "tb_tennv";
-            this.tb_tennv.Size = new System.Drawing.Size(216, 22);
-            this.tb_tennv.TabIndex = 1;
-            // 
-            // tb_chucvu
-            // 
-            this.tb_chucvu.Location = new System.Drawing.Point(461, 125);
-            this.tb_chucvu.Name = "tb_chucvu";
-            this.tb_chucvu.Size = new System.Drawing.Size(252, 22);
-            this.tb_chucvu.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 44);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 16);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Mã Phòng Ban";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 125);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 16);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tên Phòng Ban";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(15, 203);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 16);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Địa Chỉ";
-            // 
-            // tb_mapb2
-            // 
-            this.tb_mapb2.Location = new System.Drawing.Point(152, 41);
-            this.tb_mapb2.Name = "tb_mapb2";
-            this.tb_mapb2.Size = new System.Drawing.Size(318, 22);
-            this.tb_mapb2.TabIndex = 1;
-            // 
-            // tb_tenpb
-            // 
-            this.tb_tenpb.Location = new System.Drawing.Point(152, 119);
-            this.tb_tenpb.Name = "tb_tenpb";
-            this.tb_tenpb.Size = new System.Drawing.Size(318, 22);
-            this.tb_tenpb.TabIndex = 1;
-            // 
-            // tb_diachi
-            // 
-            this.tb_diachi.Location = new System.Drawing.Point(152, 197);
-            this.tb_diachi.Name = "tb_diachi";
-            this.tb_diachi.Size = new System.Drawing.Size(318, 22);
-            this.tb_diachi.TabIndex = 1;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(359, 208);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 16);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Tiền Lương";
-            // 
-            // tb_tienluong
-            // 
-            this.tb_tienluong.Location = new System.Drawing.Point(461, 203);
-            this.tb_tienluong.Name = "tb_tienluong";
-            this.tb_tienluong.Size = new System.Drawing.Size(252, 22);
-            this.tb_tienluong.TabIndex = 1;
-            // 
-            // dtime_ngaysinh
-            // 
-            this.dtime_ngaysinh.Location = new System.Drawing.Point(461, 44);
-            this.dtime_ngaysinh.Name = "dtime_ngaysinh";
-            this.dtime_ngaysinh.Size = new System.Drawing.Size(252, 22);
-            this.dtime_ngaysinh.TabIndex = 2;
-            // 
-            // cb_gioitinh
-            // 
-            this.cb_gioitinh.FormattingEnabled = true;
-            this.cb_gioitinh.Location = new System.Drawing.Point(124, 200);
-            this.cb_gioitinh.Name = "cb_gioitinh";
-            this.cb_gioitinh.Size = new System.Drawing.Size(216, 24);
-            this.cb_gioitinh.TabIndex = 3;
             // 
             // Form1
             // 

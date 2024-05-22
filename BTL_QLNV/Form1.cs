@@ -75,5 +75,27 @@ namespace BTL_QLNV
             loaddata2();
         }
 
+        private void bt_them1_Click(object sender, EventArgs e)
+        {
+            command = connection.CreateCommand();
+            command.CommandText = "INSERT INTO ThongTinNhanVien VALUES (@Manv, @Tennv, @Ngaysinh, @Gioitinh, @Chucvu, @Tienluong, @Mapb)";
+
+            // Assuming connection is already open
+            command.Parameters.AddWithValue("@Manv", tb_manv.Text);
+            command.Parameters.AddWithValue("@Tennv", tb_tennv.Text);
+            command.Parameters.AddWithValue("@Ngaysinh", DateTime.Parse(dtime_ngaysinh.Text)); // Assuming dtime_ngaysinh is a DateTimePicker
+            command.Parameters.AddWithValue("@Gioitinh", cb_gioitinh.Text);
+            command.Parameters.AddWithValue("@Chucvu", tb_chucvu.Text);
+            command.Parameters.AddWithValue("@Tienluong", tb_tienluong.Text);
+            command.Parameters.AddWithValue("@Mapb", tb_mapb1.Text);
+            command.ExecuteNonQuery();
+            MessageBox.Show("Nhân viên đã được thêm thành công.");
+            loaddata1();
+        }
+
+        private void cb_gioitinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
