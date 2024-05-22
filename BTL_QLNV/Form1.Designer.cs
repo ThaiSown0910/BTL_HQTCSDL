@@ -343,6 +343,7 @@
             this.bt_khoitao1.TabIndex = 4;
             this.bt_khoitao1.Text = "Khởi Tạo";
             this.bt_khoitao1.UseVisualStyleBackColor = true;
+            this.bt_khoitao1.Click += new System.EventHandler(this.bt_khoitao1_Click);
             // 
             // bt_them1
             // 

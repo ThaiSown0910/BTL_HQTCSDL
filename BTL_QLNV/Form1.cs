@@ -16,7 +16,7 @@ namespace BTL_QLNV
 
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=Admin-PC;Initial Catalog=QLCongTy;Integrated Security=True";
+        string str = "Data Source=LAPTOP-3CLN13P2;Initial Catalog=QLCongTy;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table1 = new DataTable();
         DataTable table2 = new DataTable();
@@ -164,6 +164,17 @@ namespace BTL_QLNV
                     MessageBox.Show("Không tìm thấy nhân viên có mã: " + tb_manv.Text);
                 }
             }
+        }
+
+        private void bt_khoitao1_Click(object sender, EventArgs e)
+        {
+            tb_manv.Text = "";
+            tb_tennv.Text = "";
+            dtime_ngaysinh.Value = DateTime.Today; // Resetting date to today's date
+            cb_gioitinh.SelectedIndex = -1; // Reset gender selection
+            tb_chucvu.Text = "";
+            tb_tienluong.Text = "";
+            tb_mapb1.Text = "";
         }
     }
 }
