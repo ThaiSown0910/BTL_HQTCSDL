@@ -123,5 +123,47 @@ namespace BTL_QLNV
                 loaddata1();
             }
             }
+
+        private void bt_sua1_Click(object sender, EventArgs e)
+        {
+            // Check if a valid employee ID is selected
+            if (string.IsNullOrEmpty(tb_manv.Text))
+            {
+                MessageBox.Show("Vui lòng chọn mã nhân viên để sửa.");
+                return;
+            }
+
+            // Ask for confirmation before updating
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn cập nhật thông tin nhân viên này?", "Xác nhận cập nhật", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                command = connection.CreateCommand();
+                command.CommandText = "UPDATE ThongTinNhanVien SET TenNV = @TenNV, NgaySinh = @NgaySinh, GioiTinh = @GioiTinh, ChucVu = @ChucVu, TienLuong = @TienLuong ,MaPB = @MaPB WHERE MaNV = @MaNV";
+
+                // Assuming connection is already open
+                command.Parameters.AddWithValue("@TenNV", tb_tennv.Text);
+                command.Parameters.AddWithValue("@NgaySinh", DateTime.Parse(dtime_ngaysinh.Text)); // Assuming dtime_ngaysinh is a DateTimePicker
+                command.Parameters.AddWithValue("@GioiTinh", cb_gioitinh.Text);
+                command.Parameters.AddWithValue("@ChucVu", tb_chucvu.Text);
+                command.Parameters.AddWithValue("@TienLuong", tb_tienluong.Text);
+                command.Parameters.AddWithValue("@MaPB", tb_mapb1.Text);
+                command.Parameters.AddWithValue("@MaNV", tb_manv.Text);
+
+
+                // Execute the update command
+                int rowsAffected = command.ExecuteNonQuery();
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Thông tin nhân viên đã được cập nhật thành công.");
+
+                    // Reload data after updating
+                    loaddata1();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy nhân viên có mã: " + tb_manv.Text);
+                }
+            }
+        }
     }
 }
