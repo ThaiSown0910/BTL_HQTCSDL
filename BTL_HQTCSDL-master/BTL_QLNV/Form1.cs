@@ -257,7 +257,7 @@ namespace BTL_QLNV
                 command.CommandText = "DELETE FROM ThongTinPhongBan WHERE MaPB = @MaPB";
                 command.Parameters.AddWithValue("@MaPB", tb_mapb2.Text);
 
-                // Thực thi câu lệnh xóa
+                // Thực hiện câu lệnh
                 command.ExecuteNonQuery();
                 MessageBox.Show("Phòng ban đã được xóa thành công.");
 
