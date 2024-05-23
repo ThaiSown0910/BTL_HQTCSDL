@@ -240,31 +240,7 @@ namespace BTL_QLNV
             }
         }
 
-        private void bt_xoa2_Click(object sender, EventArgs e)
-        {
-            // Kiểm tra xem một phòng ban nào đó đã được chọn hay chưa
-            if (string.IsNullOrEmpty(tb_mapb2.Text))
-            {
-                MessageBox.Show("Vui lòng chọn mã phòng ban để xóa.");
-                return;
-            }
-
-            // Xác nhận với người dùng trước khi xóa
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa phòng ban này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                command = connection.CreateCommand();
-                command.CommandText = "DELETE FROM ThongTinPhongBan WHERE MaPB = @MaPB";
-                command.Parameters.AddWithValue("@MaPB", tb_mapb2.Text);
-
-                // Thực thi câu lệnh xóa
-                command.ExecuteNonQuery();
-                MessageBox.Show("Phòng ban đã được xóa thành công.");
-
-                // Tải lại dữ liệu cho bảng ThongTinPhongBan
-                loaddata2();
-            }
-        }
+        
 
         private void bt_khoitao2_Click(object sender, EventArgs e)
         {
