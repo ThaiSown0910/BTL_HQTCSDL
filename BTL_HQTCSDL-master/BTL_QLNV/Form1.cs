@@ -242,7 +242,7 @@ namespace BTL_QLNV
 
         private void bt_xoa2_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem một phòng ban nào đó đã được chọn hay chưa
+            // Kiểm tra xem một phòng ban nào đó đã được chọn hay không 
             if (string.IsNullOrEmpty(tb_mapb2.Text))
             {
                 MessageBox.Show("Vui lòng chọn mã phòng ban để xóa.");
@@ -268,7 +268,7 @@ namespace BTL_QLNV
 
         private void bt_khoitao2_Click(object sender, EventArgs e)
         {
-            // Xóa dữ liệu trong các TextBox
+            // Xóa dữ liệu đang có
             tb_mapb2.Text = "";
             tb_tenpb.Text = "";
             tb_diachi.Text = "";
