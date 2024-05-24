@@ -16,7 +16,7 @@ namespace BTL_QLNV
 
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=Admin-PC;Initial Catalog=QLCongTy;Integrated Security=True";
+        string str = "Data Source=LAPTOP-3CLN13P2;Initial Catalog=QLCongTy;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table1 = new DataTable();
         DataTable table2 = new DataTable();

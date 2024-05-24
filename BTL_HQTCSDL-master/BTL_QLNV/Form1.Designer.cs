@@ -130,9 +130,9 @@
             // 
             // dtime_ngaysinh
             // 
-            this.dtime_ngaysinh.Location = new System.Drawing.Point(461, 44);
+            this.dtime_ngaysinh.Location = new System.Drawing.Point(455, 42);
             this.dtime_ngaysinh.Name = "dtime_ngaysinh";
-            this.dtime_ngaysinh.Size = new System.Drawing.Size(252, 22);
+            this.dtime_ngaysinh.Size = new System.Drawing.Size(273, 22);
             this.dtime_ngaysinh.TabIndex = 2;
             // 
             // tb_mapb1
@@ -151,16 +151,16 @@
             // 
             // tb_tienluong
             // 
-            this.tb_tienluong.Location = new System.Drawing.Point(461, 203);
+            this.tb_tienluong.Location = new System.Drawing.Point(455, 202);
             this.tb_tienluong.Name = "tb_tienluong";
-            this.tb_tienluong.Size = new System.Drawing.Size(252, 22);
+            this.tb_tienluong.Size = new System.Drawing.Size(273, 22);
             this.tb_tienluong.TabIndex = 1;
             // 
             // tb_chucvu
             // 
-            this.tb_chucvu.Location = new System.Drawing.Point(461, 125);
+            this.tb_chucvu.Location = new System.Drawing.Point(455, 125);
             this.tb_chucvu.Name = "tb_chucvu";
-            this.tb_chucvu.Size = new System.Drawing.Size(252, 22);
+            this.tb_chucvu.Size = new System.Drawing.Size(273, 22);
             this.tb_chucvu.TabIndex = 1;
             // 
             // tb_manv
@@ -200,7 +200,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(359, 208);
+            this.label10.Location = new System.Drawing.Point(353, 203);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 16);
             this.label10.TabIndex = 0;
@@ -209,7 +209,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(359, 128);
+            this.label6.Location = new System.Drawing.Point(353, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 16);
             this.label6.TabIndex = 0;
@@ -218,7 +218,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(364, 47);
+            this.label5.Location = new System.Drawing.Point(353, 47);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 16);
             this.label5.TabIndex = 0;
@@ -285,7 +285,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 125);
+            this.label8.Location = new System.Drawing.Point(15, 122);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(113, 16);
             this.label8.TabIndex = 0;
@@ -311,14 +311,14 @@
             // 
             this.tb_tenpb.Location = new System.Drawing.Point(152, 119);
             this.tb_tenpb.Name = "tb_tenpb";
-            this.tb_tenpb.Size = new System.Drawing.Size(186, 22);
+            this.tb_tenpb.Size = new System.Drawing.Size(318, 22);
             this.tb_tenpb.TabIndex = 1;
             // 
             // tb_mapb2
             // 
             this.tb_mapb2.Location = new System.Drawing.Point(152, 41);
             this.tb_mapb2.Name = "tb_mapb2";
-            this.tb_mapb2.Size = new System.Drawing.Size(186, 22);
+            this.tb_mapb2.Size = new System.Drawing.Size(318, 22);
             this.tb_mapb2.TabIndex = 1;
             // 
             // bt_sua1
