@@ -16,7 +16,7 @@ namespace BTL_QLNV
 
         SqlConnection connection;
         SqlCommand command;
-        string str = "Data Source=DESKTOP-5BVHBHL\\SQLEXPRESS;Initial Catalog=QLCongTy;Integrated Security=True";
+        string str = "Data Source=LAPTOP-3CLN13P2;Initial Catalog=QLCongTy;Integrated Security=True";
         SqlDataAdapter adapter = new SqlDataAdapter();
         DataTable table1 = new DataTable();
         DataTable table2 = new DataTable();
@@ -64,7 +64,11 @@ namespace BTL_QLNV
 
         private void dgv2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int i;
+            i = dgv2.CurrentRow.Index;
+            tb_mapb2.Text = dgv2.Rows[i].Cells[0].Value.ToString();
+            tb_tenpb.Text = dgv2.Rows[i].Cells[1].Value.ToString();
+            tb_diachi.Text = dgv2.Rows[i].Cells[2].Value.ToString();
         }
 
         private void Form1_Load(object sender, EventArgs e)
