@@ -126,7 +126,7 @@ namespace BTL_QLNV
                 // Reload data after deletion
                 loaddata1();
             }
-            }
+         }
 
         private void bt_sua1_Click(object sender, EventArgs e)
         {
@@ -254,21 +254,48 @@ namespace BTL_QLNV
             }
 
             // Xác nhận với người dùng trước khi xóa
-            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa phòng ban này?", "Xác nhận xóa", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Bạn có chắc muốn xóa phòng ban này? Tất cả nhân viên trong phòng ban này cũng sẽ bị xóa.", "Xác nhận xóa", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                command = connection.CreateCommand();
-                command.CommandText = "DELETE FROM ThongTinPhongBan WHERE MaPB = @MaPB";
-                command.Parameters.AddWithValue("@MaPB", tb_mapb2.Text);
+                try
+                {
+                    command = connection.CreateCommand();
 
-                // Thực hiện câu lệnh
-                command.ExecuteNonQuery();
-                MessageBox.Show("Phòng ban đã được xóa thành công.");
+                    // Begin a transaction
+                    SqlTransaction transaction = connection.BeginTransaction();
+                    command.Transaction = transaction;
 
-                // Tải lại dữ liệu cho bảng ThongTinPhongBan
-                loaddata2();
+                    // First, delete employees in the department
+                    command.CommandText = "DELETE FROM ThongTinNhanVien WHERE MaPB = @MaPB1";
+                    command.Parameters.AddWithValue("@MaPB1", tb_mapb2.Text);
+                    command.ExecuteNonQuery();
+                    command.Parameters.RemoveAt("@MaPB1"); // Remove parameter after use
+
+                    // Then, delete the department
+                    command.CommandText = "DELETE FROM ThongTinPhongBan WHERE MaPB = @MaPB2";
+                    command.Parameters.AddWithValue("@MaPB2", tb_mapb2.Text);
+                    command.ExecuteNonQuery();
+                    command.Parameters.RemoveAt("@MaPB2"); // Remove parameter after use
+
+                    // Commit the transaction
+                    transaction.Commit();
+
+                    MessageBox.Show("Phòng ban và tất cả nhân viên trong phòng ban đã được xóa thành công.");
+
+                    // Tải lại dữ liệu cho bảng ThongTinPhongBan
+                    loaddata2();
+                    // Tải lại dữ liệu cho bảng ThongTinNhanVien
+                    loaddata1();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi: " + ex.Message);
+                }
             }
         }
+
+
+
 
         private void bt_khoitao2_Click(object sender, EventArgs e)
         {
